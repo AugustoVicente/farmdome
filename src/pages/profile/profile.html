@@ -1,0 +1,45 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<button ion-button menuToggle>
+			<ion-icon name="menu" color="light"></ion-icon>
+		</button>
+		<ion-title>Minha Conta</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-list>
+		<ion-item>
+			<ion-label color="primary">Usuário:</ion-label>
+			<ion-input [(ngModel)]="nome"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary">E-mail:</ion-label>
+			<ion-input [(ngModel)]="email"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary">CPF/CNPJ:</ion-label>
+			<ion-input [(ngModel)]="doc"></ion-input>
+		</ion-item>
+		<ion-item *ngFor="let telefone of tel; let i = index">
+			<ion-label color="primary">Telefone {{i+1}}:</ion-label>
+			<ion-input [(ngModel)]="telefone.numero"></ion-input>
+		</ion-item>
+	</ion-list>
+	<p><b>OBS:</b> As alterações de senha somente podem ser reaizadas pelo site web.</p>
+</ion-content>
+<ion-footer>
+	<div ion-row>
+		<ion-col col-12>
+			<button ion-button round (click)="salvar_dados()" color="secondary">
+				SALVAR
+			</button>
+		</ion-col>
+	</div>
+	<div ion-row>
+		<ion-col col-12>
+			<button ion-button round (click)="logout()" color="danger">
+				SAIR
+			</button>
+		</ion-col>
+	</div>
+</ion-footer>

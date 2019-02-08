@@ -1,0 +1,48 @@
+ion-modal.my-popup {
+    @media (min-width: 300px) and (min-height: 500px) {
+        ion-backdrop {
+            visibility: visible;
+        }
+    }
+    .modal-wrapper {
+        position: absolute;
+        overflow: hidden;
+        max-width: 280px;
+        border-radius: 2px;
+        width: 80vw;
+        height: 70vh;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 0;
+        box-shadow: 0 16px 20px rgba(0,0,0,.4);
+        background-color: #fafafa;
+        border-radius: 10px;
+    }
+    h4, p{
+        font-family: Roboto;
+        font-style: normal;
+        font-stretch: normal;
+        letter-spacing: normal;
+        color: #686868;
+        text-align: center;
+        margin-top: 30px;
+    }
+    ion-fab{
+        .close{
+            position: absolute;
+            top: -5px;
+            font-size: 20px;
+            background: transparent;
+            right: -5px;
+            border-radius: 10px;
+        }
+    }
+    ion-col{
+        button{
+            width: 100%;
+        }
+    }
+}

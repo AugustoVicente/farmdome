@@ -1,0 +1,41 @@
+<ion-header>
+</ion-header>
+<ion-content padding>
+	<div class="box_cabecalho">
+		<br/>
+		<h1>
+			Entrar no sistema
+		</h1>
+		<br/>
+	</div>
+	<div class="box_login">
+		<br/>
+		<div>
+			<ion-item class="forms">
+				<ion-label>
+					<ion-icon name="md-mail" color="fade"></ion-icon>
+				</ion-label>
+				<ion-input type="email" [(ngModel)]="login" placeholder="E-Mail"></ion-input>
+			</ion-item>
+		</div>
+		<div ion-row>
+			<ion-item class="forms">
+				<ion-label>
+					<ion-icon name="md-lock" color="fade"></ion-icon>
+				</ion-label>
+				<ion-input type="password" [(ngModel)]="senha" placeholder="Senha"></ion-input>
+			</ion-item>	
+		</div>
+	</div>
+	<br/>
+	<div class="btns">
+		<button (click)="entrar();" ion-button block round color="primary" class="btn_entrar">Continuar</button>
+		<br/>
+		<button (click)="cadastro();" ion-button block outline round class="btn_cadastrar">Cadastrar-se</button>
+		<br/>
+		<a (click)="pwd_rec();" class="btn_esqueci" block outline>Esqueci minha senha</a>
+	</div>
+</ion-content>
+<ion-footer>
+	<h3 text-center (click)="site()">www.farmdome.com</h3>
+</ion-footer>

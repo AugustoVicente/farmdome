@@ -1,0 +1,53 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-title>Cadastro</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<div class="box_cabecalho">
+		<br/>
+		<h1>
+			Preencha os campos
+		</h1>
+		<br/>
+	</div>
+	<div class="box_login">
+		<div>
+			<ion-item class="forms">
+				<ion-label color="primary">Nome Completo:</ion-label>
+				<ion-input type="text" [(ngModel)]="nome"></ion-input>
+			</ion-item>
+		</div>
+		<div ion-row>
+			<ion-item class="forms">
+				<ion-label color="primary">Telefone:</ion-label>
+				<ion-input type="text" [(ngModel)]="tel"></ion-input>
+			</ion-item>
+		</div>
+		<div ion-row>
+			<ion-item class="forms">
+				<ion-label color="primary">CPF/CNPJ:</ion-label>
+				<ion-input type="text" [(ngModel)]="doc"></ion-input>
+			</ion-item>
+		</div>
+		<div ion-row>
+			<ion-item class="forms">
+				<ion-label color="primary">E-mail:</ion-label>
+				<ion-input type="email" [(ngModel)]="email"></ion-input>
+			</ion-item>
+		</div>
+		<div ion-row>
+			<ion-item class="forms">
+				<ion-label color="primary">Senha:</ion-label>
+				<ion-input type="password" [(ngModel)]="senha"></ion-input>
+			</ion-item>
+		</div>
+		<div ion-row>
+			<ion-item class="forms">
+				<ion-label color="primary">Confirmar Senha:</ion-label>
+				<ion-input type="password" [(ngModel)]="csenha"></ion-input>
+			</ion-item>
+		</div>
+	</div>
+	<button (click)="cadastrar()" ion-button block round color="primary" class="btn_entrar">Confirmar dados</button>
+</ion-content>

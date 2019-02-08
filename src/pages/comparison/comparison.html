@@ -1,0 +1,117 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<div ion-row>
+			<ion-col col-1></ion-col>
+			<ion-col col-8>
+				<h4>Comparativo</h4>
+			</ion-col>
+			<ion-col col-1></ion-col>
+			<ion-col col-1 (click)="home()">
+				<ion-icon name="md-home" ></ion-icon>
+			</ion-col>
+		</div>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<h1>Descrição do Produto</h1>
+	<ion-card>
+		<ion-card-header text-center>
+			Nome: {{produto.pro_nome}}
+		</ion-card-header>
+		<ion-item>
+			<h3><b>INGREDIENTE ATIVO:</b> {{produto.iat_nome}}</h3>
+			<h3><b>CONCENTRAÇÕES:</b> {{produto.iat_conc}}</h3>
+			<h3><b>PREÇO MÉDIO:</b> {{utilidades.transforma_to_preco(produto.preco_medio)}} / {{sigla}}</h3>
+		</ion-item>
+	</ion-card>
+	<ion-item-divider></ion-item-divider>
+	<h1>Valores encontrados no mercado</h1>
+	<div ion-row>
+		<ion-col col-3>
+			<div ion-row>
+				<ion-col col-10>
+					<label><small>Meu Preço</small></label>
+				</ion-col>
+				<ion-col col-2>
+					<div class="preco_pago_ct"></div>
+				</ion-col>
+			</div>	
+		</ion-col>
+		<ion-col col-5>
+			<div ion-row>
+				<ion-col col-1></ion-col>
+				<ion-col col-10>
+					<label><small>Média do Mercado</small></label>
+				</ion-col>
+				<ion-col col-1>
+					<div class="preco_medio_ct"></div>
+				</ion-col>
+			</div>	
+		</ion-col>
+		<ion-col col-4>
+			<div ion-row>
+				<ion-col col-10>
+					<label><small>Outros Preços</small></label>
+				</ion-col>
+				<ion-col col-2>
+					<div class="outros_precos_ct"></div>				
+				</ion-col>
+			</div>	
+		</ion-col>
+	</div>
+	<div class="ct-chart ct-bar"></div>
+	<ion-item-divider></ion-item-divider>
+	<h3 class="title_h3">Produtos Similares</h3>
+	<ion-list>
+		<ng-container *ngFor="let produto_s of produtos_similares; let i = index">
+			<ion-item *ngIf="(i+1) <= 3">
+				<div ion-row>
+					<ion-col col-8>
+						<h2>#{{i+1}} {{produto_s.pro_nome}}</h2>
+						<h3>Ingrediente Ativo: {{produto_s.iat_nome}}</h3>
+						<p>Concentrações: {{produto_s.iat_conc}}</p>
+						<p>Preço Médio: {{utilidades.transforma_to_preco(produto_s.preco_medio)}} / {{produto_s.sigla}}</p>
+					</ion-col>
+					<ion-col col-4>
+						<div ion-row>
+							<button class="button_item" ion-button round outline (click)="adicionar_orcamento(produto_s.id)">
+								<small>Orçamento</small>
+							</button>
+							<button class="button_item" ion-button round outline (click)="ver_preco(produto_s.id, produto_s.pro_nome)">
+								<small>Ver Preço</small>
+							</button>
+						</div>
+					</ion-col>
+				</div>
+			</ion-item>
+		</ng-container>
+	</ion-list>
+	<ion-item-divider></ion-item-divider>
+	<h1>Outros Produtos Similares</h1>
+	<ion-list>
+		<ion-item (click)="go_to_produtos_similares(1)">
+			<h4>Mesmo Ingrediente Ativo e Concentração</h4>
+			<ion-icon name="ios-arrow-dropright" item-end></ion-icon>
+		</ion-item>
+		<ion-item (click)="go_to_produtos_similares(2)">
+			<h4>Mesmo Ingrediente Ativo</h4>
+			<ion-icon name="ios-arrow-dropright" item-end></ion-icon>
+		</ion-item>
+	</ion-list>
+</ion-content>
+<ion-footer>
+	<div ion-row>
+		<ion-col col-6>
+			<button ion-button round (click)="adicionar_favoritos()" color="secondary">
+				<ion-icon name="ios-star"></ion-icon>
+				&nbsp;&nbsp;<p><small>ADICIONAR<br> AOS FAVORITOS</small></p>
+			</button>
+		</ion-col>
+		<ion-col col-6>
+			<button ion-button round outline (click)="adicionar_orcamento(produto_escolhido)" color="secondary">
+				<ion-icon name="cart"></ion-icon>
+				&nbsp;&nbsp;<small>ADICIONAR<br> ORÇAMENTO</small>
+			</button>
+		</ion-col>
+	</div>
+</ion-footer>

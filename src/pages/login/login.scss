@@ -1,0 +1,58 @@
+page-login{
+	ion-content{
+        .box_cabecalho{
+            margin-top: -16px;
+            background-color: color($colors, secondary, base);
+            margin-left: -16px;
+            margin-right: -16px;
+            h1{
+                margin-top: 5px;
+                color: color($colors, light, base);
+                text-align: center;
+                font-family: Roboto;
+            }
+        }
+        .box_login{
+            margin-top: 10%;
+            .forms{
+                label{
+                    text-align: center;
+                    color: rgba(187, 185, 185, 0.707);
+                }
+                margin-bottom: 5%;
+                background-color: rgba(225, 225, 225, 0.707);
+                border-radius: 25px;
+            }
+        }
+        .btns{
+            text-align: center;
+            .btn_entrar{
+                margin-top: 15px;
+                height: 50px;
+            }
+            .btn_cadastrar{
+                margin-top: 15px;
+                width: 40%;
+                margin-left: 30%;
+                margin-right: 30%;
+            }
+        }
+       
+    }
+    ion-header{
+        height: 110px;
+        background-color: color($colors, light, base);
+        background-image: url('../assets/imgs/logo.png');
+        background-repeat: no-repeat;
+        background-size: 70% 90%;
+        background-position: center;
+    }
+    ion-footer{
+        background-color: color($colors, secondary, base);
+        h3{
+            color: color($colors, light, base);
+            text-align: center;
+            font-family: Roboto;
+        }
+    }
+}

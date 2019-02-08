@@ -1,0 +1,32 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-title>Produtos simmilares</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<h1>{{titulo}}</h1>
+	<ion-list>
+		<ion-item *ngFor="let produto_s of produtos_similares; let i = index">
+			<div ion-row>
+				<ion-col col-8>
+					<h2>{{produto_s.pro_nome}}</h2>
+					<h3>Ingrediente Ativo: {{produto_s.iat_nome}}</h3>
+					<p>Concentrações: {{produto_s.iat_conc}}</p>
+					<p>Embalagem: {{utilidades.transforma_to_preco(produto_s.preco_medio)}} / {{produto_s.sigla}}</p>
+				</ion-col>
+				<ion-col col-4>
+					<div ion-row (click)="ver_preco(produto_s.id, produto_s.pro_nome)">
+						<button class="button_item" ion-button round outline>
+							<small>Ver Preço</small>
+						</button>
+					</div>
+					<div ion-row (click)="adicionar_orcamento(produto_s.id)">
+						<button class="button_item" ion-button round outline>
+							<small>Carrinho</small>
+						</button>
+					</div>
+				</ion-col>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-content>

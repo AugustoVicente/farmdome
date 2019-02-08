@@ -1,0 +1,19 @@
+page-favorites {
+    ion-header{
+        ion-icon.back-button-icon.icon {
+            color: map-get($colors, light);
+            
+        }
+        span.back-button-text.back-button-text-ios, span.back-button-text.back-button-text-md{
+            color: map-get($colors, light);
+        }
+        ion-navbar{
+            div{
+                border-radius: 2px; 
+                ion-title{
+                    margin-left: 5%;
+                }   
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+page-opt-buy {
+    ion-header{
+        text-align: left;
+        ion-navbar{
+            div{
+                [col-11]{
+                    width: 100%;
+                    max-width: 100%;
+                }
+                border-radius: 2px;
+                ion-col{
+                    h4{
+                        // margin-left: 16px;
+                        font-family: Roboto;
+                        color: color($colors, light, base);
+                    }
+                    ion-icon{
+                        float: right;
+                        display: block;
+                        font-size: 30px;
+                        margin-top: 80%;
+                        margin-left: 15%;
+                        color: color($colors, light, base);
+                    }
+                }
+            }
+        }
+    }
+    h1{
+        font-family: Roboto;
+        color: color($colors, dark, base);
+    }
+    .card_subgrupo{
+        background-color: color($colors, secondary, base) !important;
+        border-radius: 10px;
+        height: 100%;
+        ion-card-title{
+            font-family: Roboto;
+            color: color($colors, light, base);
+            margin-top: 15% !important;
+            margin-bottom: 4%;
+            font-size: 5vw;
+        }
+        img{
+            height: 50px;
+            width: auto;
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+    }
+    .info_carro{
+        position: absolute;
+        top: 5px;
+        right: -5px;
+        border-radius: 100%;
+    }
+}

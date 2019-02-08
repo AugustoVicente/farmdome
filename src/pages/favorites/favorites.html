@@ -1,0 +1,23 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<button ion-button menuToggle>
+			<ion-icon name="menu" color="light"></ion-icon>
+		</button>
+		<ion-title>Favoritos</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-list>
+		<ion-list-header>
+			Lista de favoritos
+		</ion-list-header>
+		<ion-item *ngFor="let favorito of favoritos">
+			<h2>{{favorito.pro_nome}}</h2> 
+			<h3>Ingrediente Ativo: {{favorito.iat_nome}}</h3>
+			<p>Concentrações: {{favorito.iat_conc}}</p>
+			<div item-end ion-button color="info">
+				<ion-icon name="md-trash" (click)="deleta(favorito.id)"></ion-icon>
+			</div>
+		</ion-item>
+	</ion-list>
+</ion-content>

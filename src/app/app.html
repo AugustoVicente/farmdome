@@ -1,0 +1,20 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <div>
+            <h2><small>Seja bem vindo,</small> <br/>{{get_nome()}}</h2>
+        </div>
+        <div class="divisor">
+            <div></div>
+            <h4>Menu</h4>
+        </div>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-item *ngFor="let page of pages" (click)="open_page(page)">
+                <ion-icon [name]="page.icon" item-end></ion-icon>
+                {{page.title}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

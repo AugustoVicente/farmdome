@@ -1,0 +1,43 @@
+page-sign-up {
+    .box_login{
+        margin-top: 10%;
+        .forms{
+            label{
+                text-align: center;
+                color: rgba(187, 185, 185, 0.707);
+            }
+            margin-bottom: 5%;
+            background-color: rgba(225, 225, 225, 0.707);
+            border-radius: 25px;
+        }
+    }
+    .box_cabecalho{
+        margin-top: -16px;
+        background-color: color($colors, light, base);
+        margin-left: -16px;
+        margin-right: -16px;
+        h1{
+            margin-top: 5px;
+            color: color($colors, primary, base);
+            text-align: center;
+            font-family: Roboto;
+        }
+    }
+    ion-header{
+        ion-icon.back-button-icon.icon {
+            color: map-get($colors, light);
+            
+        }
+        span.back-button-text.back-button-text-ios, span.back-button-text.back-button-text-md{
+            color: map-get($colors, light);
+        }
+        ion-navbar{
+            div{
+                border-radius: 2px; 
+                ion-title{
+                    margin-left: 5%;
+                }   
+            }
+        }
+    }
+}

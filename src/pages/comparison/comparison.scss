@@ -1,0 +1,109 @@
+page-comparison {
+    ion-content{
+        small{
+            font-size: 85%;
+        }
+        .ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+            stroke: color($colors, info);
+            stroke-width: 30px;
+        }
+        .ct-series-c .ct-bar, .ct-series-c .ct-line, .ct-series-c .ct-point, .ct-series-c .ct-slice-donut{
+            stroke: color($colors, secondary);
+            stroke-width: 25px;
+        }
+        .ct-series-b .ct-bar, .ct-series-b .ct-line, .ct-series-b .ct-point, .ct-series-b .ct-slice-donut{
+            stroke: #f89715;
+            stroke-width: 25px;
+        }
+        .ct-label {
+            fill: rgba(0,0,0,.4);
+            color: rgb(0, 0, 0);
+            font-size: 3vw !important;
+            line-height: 1;
+            margin-top: 25px;
+            height: 50px !important;
+            width: 60px !important;
+        }
+        h1, h2, .title_h3{
+            font-family: Roboto;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: normal;
+            color: #686868;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .button_item{
+            height: 35px !important;
+            width: 100%;
+        }
+        .preco_pago_ct{
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background-color: color($colors, secondary);
+            margin-top: 60%;
+        }
+        .preco_medio_ct{
+            border-radius: 100%;
+            width: 10px;
+            height: 10px;
+            background-color: #f89715;
+            margin-top: 60%;
+        }
+        .outros_precos_ct{
+            background-color: color($colors, info);
+            width: 10px;
+            height: 10px;
+            margin-top: 50%;
+        }
+        ion-list{
+            ion-item{
+                div{
+                    ion-col{
+                        h2{
+                            text-align: left;
+                        }
+                        white-space:normal
+                    }
+                }
+            }
+        }
+    }
+    ion-header{
+        ion-icon.back-button-icon.icon {
+            color: map-get($colors, light);
+            
+        }
+        span.back-button-text.back-button-text-ios, span.back-button-text.back-button-text-md{
+            color: map-get($colors, light);
+        }
+        ion-navbar{
+            div{
+                border-radius: 2px; 
+                ion-title{
+                    margin-left: 5%;
+                }   
+            }
+        }
+        ion-col{
+            h4{
+                font-family: Roboto;
+                color: color($colors, light, base);
+            }
+            ion-icon{
+                float: right;
+                display: block;
+                font-size: 30px;
+                margin-top: 80%;
+                margin-left: 15%;
+                color: color($colors, light, base);
+            }
+        }
+    }
+    ion-footer{
+        button{
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-navbar color="secondary">
+		<div ion-row>
+			<ion-col col-10></ion-col>
+			<ion-col col-1 (click)="home()">
+				<ion-icon name="md-home" ></ion-icon>
+			</ion-col>
+		</div>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+	<h1>Descrição do Produto</h1>
+	<ion-card>
+		<ion-card-header text-center>
+			Nome: {{produto.pro_nome}}
+		</ion-card-header>
+		<ion-item>
+			<h3><b>INGREDIENTE ATIVO: </b>{{produto.iat_nome}}</h3>
+			<h3><b>CONCENTRAÇÕES: </b>{{produto.concentracao}}</h3>
+			<h3><b>PREÇO MÉDIO:</b> {{utilidades.transforma_to_preco(produto.preco_medio)}}</h3>
+		</ion-item>
+	</ion-card>
+	<ion-card>
+		<ion-card-header text-center>
+			Fornecedores
+		</ion-card-header>
+		<ion-item *ngFor="let fornecedor of fornecedores">
+			<ion-label>{{fornecedor.nome}}</ion-label>
+			<ion-checkbox [(ngModel)]="fornecedor.check" value="true"></ion-checkbox>
+		</ion-item>
+	</ion-card>
+	<ion-list no-lines>
+		<ion-item>
+			<ion-label>Quantidade:</ion-label>
+			<ion-input type="number" min="1" [(ngModel)]="qtd"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Pretensão de Pagamento:</ion-label>
+			<ion-input type="number" min="1" placeholder="R$ 0,00" [(ngModel)]="ppag"></ion-input>
+		</ion-item>
+		<ion-item no-lines>
+			<ion-label>Forma de pagamento:</ion-label>
+			<ion-select [(ngModel)]="fpag">
+				<ion-option selected *ngFor="let fpaga of fpagamentos" value="{{fpaga.id}}">{{fpaga.fpag_nome}}</ion-option>
+			</ion-select>
+		</ion-item>
+		<ion-item no-lines>
+			<ion-label>Embalagem:</ion-label>
+			<ion-select [(ngModel)]="embalagem">
+				<ion-option selected *ngFor="let emb of produto.embalagens" value="{{emb.id}}">{{emb.pemb_qtd}} {{produto.unidade_medida.sigla}}</ion-option>
+			</ion-select>
+		</ion-item>
+	</ion-list>
+</ion-content>
+<ion-footer>
+	<div ion-row>
+		<ion-col col-12>
+			<button ion-button round (click)="adicionar_produto()">
+				ADICONAR PRODUTO
+			</button>
+		</ion-col>
+	</div>
+</ion-footer>

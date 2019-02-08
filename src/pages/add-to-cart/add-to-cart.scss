@@ -1,0 +1,45 @@
+page-add-to-cart {
+    ion-header{
+        ion-icon.back-button-icon.icon {
+            color: map-get($colors, light);
+            
+        }
+        span.back-button-text.back-button-text-ios, span.back-button-text.back-button-text-md{
+            color: map-get($colors, light);
+        }
+        ion-navbar{
+            div{
+                border-radius: 2px;    
+            }
+            ion-col{
+                ion-icon{
+                    float: right;
+                    display: block;
+                    font-size: 30px;
+                    margin-top: 80%;
+                    margin-left: 15%;
+                    color: color($colors, light, base);
+                }
+            }
+        }
+    }
+    ion-content{
+        h1{
+            font-family: Roboto;
+            font-style: normal;
+            font-stretch: normal;
+            letter-spacing: normal;
+            color: #686868;
+            text-align: center;
+            margin-top: 30px;
+        }
+        ion-item{ 
+            border-style: none
+        }
+    }
+    ion-footer{
+        button{
+            width: 100%;
+        }
+    }
+}

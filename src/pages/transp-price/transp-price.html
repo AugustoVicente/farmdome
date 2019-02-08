@@ -1,0 +1,44 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<button ion-button menuToggle>
+			<ion-icon name="menu" color="light"></ion-icon>
+		</button>
+		<div ion-row>
+			<ion-col col-9>
+				<h4>Transparência de preço</h4>
+			</ion-col>
+			<ion-col col-1></ion-col>
+			<ion-col col-1 (click)="entra_carrinho()">
+				<ion-icon name="md-list-box" >
+					<ion-badge item-end class="info_carro">{{utilidades.qtd_carrinho()}}</ion-badge>
+				</ion-icon>
+			</ion-col>
+		</div>
+	</ion-navbar>
+	<ion-segment [(ngModel)]="pagina" color="info">
+		<ion-segment-button value="{{transforma_string(aba.id)}}" *ngFor="let aba of grupob" (click)="change_tab($event)">
+			<input value="{{aba.id}}" style="display: none;">
+			{{aba.clu_nome}}
+		</ion-segment-button>
+	</ion-segment>
+</ion-header>
+<ion-content padding>
+	<br/>
+	<div [ngSwitch]="pagina">
+		<ng-container *ngFor="let aba of grupob">
+			<div *ngSwitchCase="transforma_string(aba.id)">
+				<div ion-row>
+					<ng-container *ngFor="let produto of grupoc">
+						<ion-col col-6 *ngIf="produto.clup_id == aba.id">
+							<ion-card class="card_subgrupo" (click)="seleciona(produto)">
+								<ion-card-content>
+									<ion-card-title text-center>{{produto.clu_nome}}</ion-card-title>
+								</ion-card-content>
+							</ion-card>
+						</ion-col>
+					</ng-container>
+				</div>
+			</div>
+		</ng-container>
+	</div>
+</ion-content>

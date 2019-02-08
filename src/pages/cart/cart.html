@@ -1,0 +1,44 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-title>Lista de produtos</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content padding>
+	<ion-list #lista id="lista">
+		<ng-container *ngFor="let pedido of carrinho; let i = index">
+			<ng-container *ngIf="pedido != null">
+				<ion-list-header>
+					{{pedido[0].fornecedor.nome}}
+				</ion-list-header>
+				<ion-item *ngFor="let prod of pedido">
+					<div item-end ion-button color="info">
+						<ion-icon name="md-trash" (click)="exclui(prod, i)"></ion-icon>
+					</div>
+					<div ion-row>
+						<ion-col col-6>
+							<h1><b>{{prod.idproduto.pro_nome}}</b></h1>
+							<h2>Embalagem: {{prod.embalagem.pemb_qtd}} {{prod.idproduto.unidade_medida.sigla}}</h2>
+							<h3>Quantidade: {{prod.qtd}}</h3>
+							<p>Preço: {{util.transforma_to_preco(prod.ppag)}}</p>
+							<p>Forma de pagamento: {{prod.fpag.fpag_nome}}</p>
+						</ion-col>
+					</div>
+				</ion-item>
+			</ng-container>
+		</ng-container>
+	</ion-list>
+</ion-content>
+<ion-footer>
+	<div ion-row>
+		<ion-col col-6>
+			<button ion-button round outline (click)="adicionar_outros()">
+				ADICIONAR OUTROS
+			</button>
+		</ion-col>
+		<ion-col col-6>
+			<button ion-button round (click)="enviar_orcamento()">
+				ENVIAR
+			</button>
+		</ion-col>
+	</div>
+</ion-footer>
